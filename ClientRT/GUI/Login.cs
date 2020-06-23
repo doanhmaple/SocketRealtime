@@ -23,7 +23,7 @@ namespace ClientRT.GUI
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
             myUser = new BllClient("aaa", "111");
-            textIPAddress.Text = "192.168.13.166";
+            textIPAddress.Text = "192.168.11.250";
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -47,6 +47,7 @@ namespace ClientRT.GUI
             clt = new TcpClient();
             try
             {
+                
                 this.clt.Connect(ipep);
                 ipAddressConnect = textIPAddress.Text;
                 MessageBox.Show("Kết nối với server thành công", "Thông báo",
@@ -150,6 +151,17 @@ namespace ClientRT.GUI
             Application.Exit();
             this.Close();
         }
-        
+
+        private void passTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                loginBtn.PerformClick();
+        }
+
+        private void textIPAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                connectBtn.PerformClick();
+        }
     }
 }

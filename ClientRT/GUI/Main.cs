@@ -58,7 +58,7 @@ namespace ClientRT.GUI
                         viewUser.Items.Add(item2);
                     }                    
                 }                
-            }            
+            }
         }
   
         // kết nối server
@@ -237,7 +237,7 @@ namespace ClientRT.GUI
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closed();
+            this.Close();
         }
 
         private void Main_Load(object sender, EventArgs e)

@@ -49,7 +49,7 @@
             this.exitBtn.Location = new System.Drawing.Point(158, 256);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(105, 35);
-            this.exitBtn.TabIndex = 19;
+            this.exitBtn.TabIndex = 5;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
@@ -61,7 +61,7 @@
             this.loginBtn.Location = new System.Drawing.Point(33, 256);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(105, 35);
-            this.loginBtn.TabIndex = 20;
+            this.loginBtn.TabIndex = 4;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
@@ -94,7 +94,8 @@
             this.passTxt.Properties.Appearance.Options.UseFont = true;
             this.passTxt.Properties.PasswordChar = '*';
             this.passTxt.Size = new System.Drawing.Size(230, 28);
-            this.passTxt.TabIndex = 16;
+            this.passTxt.TabIndex = 3;
+            this.passTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passTxt_KeyPress);
             // 
             // usNameTxt
             // 
@@ -103,7 +104,7 @@
             this.usNameTxt.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usNameTxt.Properties.Appearance.Options.UseFont = true;
             this.usNameTxt.Size = new System.Drawing.Size(230, 28);
-            this.usNameTxt.TabIndex = 15;
+            this.usNameTxt.TabIndex = 2;
             // 
             // titleLabelControl
             // 
@@ -123,16 +124,17 @@
             this.textIPAddress.Location = new System.Drawing.Point(33, 332);
             this.textIPAddress.Name = "textIPAddress";
             this.textIPAddress.Size = new System.Drawing.Size(230, 29);
-            this.textIPAddress.TabIndex = 21;
+            this.textIPAddress.TabIndex = 0;
+            this.textIPAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textIPAddress_KeyPress);
             // 
             // connectBtn
             // 
             this.connectBtn.BackColor = System.Drawing.Color.Transparent;
             this.connectBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectBtn.Location = new System.Drawing.Point(98, 367);
+            this.connectBtn.Location = new System.Drawing.Point(96, 367);
             this.connectBtn.Name = "connectBtn";
             this.connectBtn.Size = new System.Drawing.Size(105, 35);
-            this.connectBtn.TabIndex = 22;
+            this.connectBtn.TabIndex = 1;
             this.connectBtn.Text = "Connect";
             this.connectBtn.UseVisualStyleBackColor = false;
             this.connectBtn.Click += new System.EventHandler(this.connectBtn_Click);
@@ -149,6 +151,7 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.loginBtn;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

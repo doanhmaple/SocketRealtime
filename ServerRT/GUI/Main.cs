@@ -30,14 +30,18 @@ namespace ServerRT.GUI
             setDataClient();
             setUpListView();
         }
+        // code hiện tại chỉ nằm ở BllServer và form Main, ko tách 3 tầng nữa
+        // từ từ mấy cái Bll là gì quên rồi nh? @@
 
         public void setDataClient()
         {
+            // user khai báo sẵn...
             listUser.Add(new BllServer("tam", "123"));
             listUser.Add(new BllServer("thanh", "123"));
             listUser.Add(new BllServer("doanh", "123"));
         }
         // vẽ cột
+        // đây là các cột hiển thị trạng thái của client trong Form Server
         public void setUpListView()
         {
             clientView.View = View.Details;
@@ -51,43 +55,48 @@ namespace ServerRT.GUI
             setDataListView();
         }
         
-
+        // 
         public void setDataListView()
         {
             clientView.Items.Clear();
             int countOnline = 0;
             // hiển thị danh sách client
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = "ALL";
-            clientView.Items.Add(lvi);
+            ListViewItem view1 = new ListViewItem();
+            view1.Text = "ALL";
+            clientView.Items.Add(view1);
+            // 
             foreach (BllServer userItem in listUser)
             {
-                ListViewItem lv2 = new ListViewItem();
-                lv2.Text = userItem.name;
-                lv2.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = userItem.address });
-                lv2.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = userItem.status });
-                clientView.Items.Add(lv2);
+                ListViewItem view2 = new ListViewItem();
+                view2.Text = userItem.name;
+                view2.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = userItem.address });
+                view2.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = userItem.status });
+                clientView.Items.Add(view2);
                 if (userItem.status == "Online")
                 {
                     countOnline++;
                 }
             }
+            // hiển thị số lượng client đang kết nối
             usOnl.Text = "Client Online: " + countOnline.ToString();
         }
 
         // lắng nghe kết nối từ phía Client
         void ListenConnect()
         {
+
             ipep = new IPEndPoint(IPAddress.Any, 3000);
             server = new TcpListener(ipep);
             server.Start();
             clientList = new List<TcpClient>();
+            // luồng Thread lắng nghe kết nối phía client
             Thread listen = new Thread(() =>
             {
                 try
                 {
                     while (true)
                     {
+                        // 
                         TcpClient client = server.AcceptTcpClient();
                         clientList.Add(client);
                         Thread thReceive = new Thread(Receive);
@@ -236,7 +245,7 @@ namespace ServerRT.GUI
         private void sendToClient(string nameUser, string ms)
         {
             BllServer UserSending = listUser.Find(x => x.name == nameUser);
-            if (nameUser != "ALL") // Gửi ALL cố định
+            if (nameUser != "ALL") // Gửi tin mặc định đến kênh ALL
             {
                 foreach (TcpClient clientItem in clientList)
                 {

@@ -115,7 +115,7 @@
             this.clientView.HideSelection = false;
             this.clientView.Location = new System.Drawing.Point(12, 54);
             this.clientView.Name = "clientView";
-            this.clientView.Size = new System.Drawing.Size(222, 326);
+            this.clientView.Size = new System.Drawing.Size(224, 326);
             this.clientView.TabIndex = 24;
             this.clientView.UseCompatibleStateImageBehavior = false;
             this.clientView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clientView_MouseClick);

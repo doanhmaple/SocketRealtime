@@ -109,13 +109,13 @@
             // clientRTToolStripMenuItem
             // 
             this.clientRTToolStripMenuItem.Name = "clientRTToolStripMenuItem";
-            this.clientRTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientRTToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.clientRTToolStripMenuItem.Text = "ClientRT";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -175,7 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Client";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
