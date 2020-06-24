@@ -1,2 +1,2 @@
 # SocketRealtime
-Another ChatApp - WFA C# :D
+Another Realtime Socket Chap Application
